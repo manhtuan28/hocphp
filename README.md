@@ -19,7 +19,9 @@ hocphp/
 ├── Bai-2/              # Bài 2
 │   ├── index.php       # File chính của bài 2
 │   └── style.php       # File PHP cho style của bài 2
+├── .....               # Các bài khác
 ├── index.php           # File location giúp truy cập dễ dàng hơn
+├── Thuc-Hanh.pdf       # File pdf bài tập thực hành
 └── README.md           # Tài liệu hướng dẫn
 ```
 
