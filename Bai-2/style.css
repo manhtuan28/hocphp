@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background-color: #fecccd;
+    display: grid;
+    place-items: center;
+    gap: 5px;
+}
+
+.title {
+    width: 100%;
+    background-color: #de4506;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 12px;
+}
+
+.box-form-inp {
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.box-input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 20px;
+}
+
+.box-input input {
+    width: 70%;
+    padding: 2px;
+}
+
+button {
+    padding: 3px;
+    width: 120px;
+    background-color: #fb995e;
+}
