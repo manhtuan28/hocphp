@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($noidung) && !empty($maunen) && !empty($mauchu)) {
         $ketqua = "<div style='background-color: $maunen; color: $mauchu; width: 370px; text-align: center; font-size: 20px; padding: 5px;'>$noidung</div>";
     } else {
-        $ketqua = "<div style='color: red; font-size: 30px;'>Nhập vào đi ơ??<div>";
+        $ketqua = "<div style='color: red; font-size: 30px;'>Nhập đủ thông vào đi ơ??<div>";
     }
 }
 

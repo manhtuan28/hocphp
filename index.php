@@ -77,11 +77,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <div class="container">
-        <h1>Chọn bài học</h1>
+        <h1>Chọn bài tiểu nhân</h1>
         <form action="" method="POST">
             <?php foreach ($baiHoc as $bai => $duongDan): ?>
                 <button type="submit" name="chuyentrang" value="<?= $bai ?>"> <?= ucfirst($bai) ?> </button>
             <?php endforeach; ?>
+            <div>Tuấn Quân Tử</div>
         </form>
     </div>
 </body>

@@ -6,7 +6,7 @@
 Chào mừng bạn đến với khoá học PHP của tôi! Repository này được tạo để chia sẻ và lưu trữ các bài tập thực hành từ sách thực hành PHP.
 
 ## 🌟 Mục tiêu
-- Lưu trữ các bài tập thực hành từ sách học PHP.
+- Lưu trữ các bài tập thực hành từ sách thực hành PHP.
 - Cung cấp các ví dụ và bài giải để hỗ trợ học tập.
 - Theo dõi quá trình học tập và tiến bộ của bản thân.
 

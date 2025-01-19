@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($username)) {
         $username = "Chào bạn, $username";
     } else {
-        $error = "Vui lòng nhập đầy đủ thông tin";
+        $error = "Nhập đủ thông vào đi ơ??";
     }
 }
 ?>

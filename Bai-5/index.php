@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($chisocu) && !empty($chisomoi) && !empty($dongia) && !empty($tenchuho)) {
         $sotienthanhtoan = ($chisomoi - $chisocu) * $dongia;
     } else {
-        $sotienthanhtoan = "Vui lòng nhập đầy đủ thông tin.";
+        $sotienthanhtoan = "Nhập đủ thông vào đi ơ??";
     }
 }
 

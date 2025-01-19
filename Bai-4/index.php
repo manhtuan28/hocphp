@@ -16,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $chuvi = 2 * PI * $bankinh;
     }
     else {
-        $dientich = "Vui lòng nhập bán kính.";
-        $chuvi = "Vui lòng nhập bán kính.";
+        $dientich = "Nhập diện tích vào đi ơ??";
+        $chuvi = "Nhập chu vi vào đi ơ??";
     }
 }
 

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $ketqua = $chieudai * $chieurong;
     }
     else {
-        $ketqua = "Vui lòng nhập đầy đủ thông tin.";
+        $ketqua = "Nhập đủ thông vào đi ơ??";
     }
 }
 
