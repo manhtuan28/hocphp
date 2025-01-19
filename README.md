@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PHP](https://img.shields.io/badge/PHP-%3E%3D7.4-8892BF.svg)](https://www.php.net/)
 
-Chào mừng bạn đến với khoá học PHP của tôi! Repository này được tạo để chia sẻ và lưu trữ các bài tập thực hành từ sách học PHP.
+Chào mừng bạn đến với khoá học PHP của tôi! Repository này được tạo để chia sẻ và lưu trữ các bài tập thực hành từ sách thực hành PHP.
 
 ## 🌟 Mục tiêu
 - Lưu trữ các bài tập thực hành từ sách học PHP.
@@ -73,4 +73,4 @@ Dự án này được phát hành dưới giấy phép [MIT](LICENSE).
 
 🌟 **Chúc bạn học tập vui vẻ!** 🌟
 
-[GitHub Repository](https://github.com/manhtuan28/hocphp)
+Chúc Mừng Năm Mới 2025
