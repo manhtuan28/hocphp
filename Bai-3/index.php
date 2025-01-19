@@ -37,15 +37,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="box-form-inp">
             <div class="box-input">
-                <lable for="">Chiều dài: </lable>
+                <label for="">Chiều dài: </label>
                 <input type="number" name="chieudai" value="<?php echo $chieudai; ?>">
             </div>
             <div class="box-input">
-                <lable for="">Chiều rộng: </lable>
+                <label for="">Chiều rộng: </label>
                 <input type="number" name="chieurong" value="<?php echo $chieurong; ?>">
             </div>
             <div class="box-input">
-                <lable for="">Diện tích: </lable>
+                <label for="">Diện tích: </label>
                 <input type="text" name="ketqua" style="background-color: #ffcbcb;" value="<?php echo $ketqua; ?>" readonly>
             </div>
         </div>

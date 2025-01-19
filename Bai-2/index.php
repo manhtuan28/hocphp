@@ -36,15 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="box-form-inp">
             <div class="box-input">
-                <lable for="">Nội dung: </lable>
+                <label for="">Nội dung: </label>
                 <input type="text" name="noidung" value="<?php echo $noidung ?>">
             </div>
             <div class="box-input">
-                <lable for="">Màu nền: </lable>
+                <label for="">Màu nền: </label>
                 <input type="text" name="maunen" value="<?php echo $maunen ?>">
             </div>
             <div class="box-input">
-                <lable for="">Màu chữ: </lable>
+                <label for="">Màu chữ: </label>
                 <input type="text" name="mauchu" value="<?php echo $mauchu ?>">
             </div>
         </div>
