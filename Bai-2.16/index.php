@@ -14,12 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['start-cuu-chuong']) &&
 
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>In bảng cửu chương</title>
 </head>
+
 <body>
     <form action="" method="POST">
         <div class="title">In bảng cửu chương</div>
@@ -53,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['start-cuu-chuong']) &&
         </div>
     <?php endif; ?>
 </body>
+
 </html>
 
 <!-- Code By Tuancute -->
