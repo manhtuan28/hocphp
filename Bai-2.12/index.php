@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['date'])) {
-    $nam = intval($_POST["date"]);
+    $nam = $_POST["date"];
 
     $soDuCan = ($nam - 3) % 10; {
         switch ($soDuCan) {
