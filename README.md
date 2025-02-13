@@ -21,6 +21,7 @@ hocphp/
 │   └── style.php       # File PHP cho style của bài 2
 ├── .....               # Các bài khác
 ├── index.php           # File location giúp truy cập dễ dàng hơn
+├── test.php            # File thử nghiệm của Tuiii
 ├── Thuc-Hanh.pdf       # File pdf bài tập thực hành
 └── README.md           # Tài liệu hướng dẫn
 ```

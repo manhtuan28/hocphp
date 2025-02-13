@@ -16,6 +16,7 @@ $baiHoc = [
     'Bài 14' => './Bai-14/index.php',
     'Bài 15' => './Bai-15/index.php',
     'Bài 21' => './Bai-21/index.php',
+    'Bài 25' => './Bai-25/index.php',
 ];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
