@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<!-- Code By Tuancute -->
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -40,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ?>
         </div>
         <div class="box-form-btn">
+<!-- Code By Tuancute -->
             <button type="submit">Chào</button>
         </div>
     </form>

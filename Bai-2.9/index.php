@@ -76,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="form-input">
                 <label for="">Kết quả thi</label>
+<!-- Code By Tuancute -->
                 <input type="text" name="ketquathi" id="" readonly value="<?php echo $ketquathi;
                                                                             echo $error; ?>">
             </div>

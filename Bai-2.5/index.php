@@ -24,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cạnh huyền tam giác vuông</title>
     <link rel="stylesheet" href="style.css">
+<!-- Code By Tuancute -->
 </head>
 
 <body>

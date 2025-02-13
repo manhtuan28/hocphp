@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="">Điểm HK2:</label>
                 <input type="text" name="diemhk2" value="<?php echo $diemhk2; ?>">
             </div>
+<!-- Code By Tuancute -->
             <div class="form-input">
                 <label for="">Điểm trung bình:</label>
                 <input type="text" name="diemtrungbinh" value="<?php echo $diemtrungbinh_hien_thi ?>" readonly>

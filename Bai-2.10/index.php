@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <span>x +</span>
                 <input type="number" step="any" name="numberB" id="" value="<?php echo $numberB; ?>">
                 <span> = 0</span>
+<!-- Code By Tuancute -->
             </div>
             <div class="form-input">
                 <label for="" style="margin-right: 49px;">Nghiệm:</label>

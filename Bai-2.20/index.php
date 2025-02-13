@@ -46,6 +46,7 @@
             <div class="box-button">
                 <button>Thay thế</button>
             </div>
+<!-- Code By Tuancute -->
             <div class="box-result">
                 <input type="text" name="result" id="result" readonly value="<?php echo $result; ?>">
             </div>

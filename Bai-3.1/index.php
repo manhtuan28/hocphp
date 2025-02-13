@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             Nhập và tính trên dãy số
         </div>
         <div class="form-input">
+<!-- Code By Tuancute -->
             <div class="box-input">
                 <span>Nhập dãy số:</span>
                 <input type="text" name="daySo" id="" value="<?php echo $daySo; ?>">

@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['number-inp'])) {
             <div class="box-result">
                 <div class="title">Kết Quả</div>
                 <div class="result">
+<!-- Code By Tuancute -->
                     <?php echo $result; ?>
                 </div>
             </div>

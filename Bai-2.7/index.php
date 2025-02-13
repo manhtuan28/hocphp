@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $chao = "Nhập giờ vào ơ???";
     }
 }
+<!-- Code By Tuancute -->
 ?>
 
 <!DOCTYPE html>

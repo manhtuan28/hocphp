@@ -46,6 +46,7 @@
                 </div>
                 <div class="box-input-result">
                     <span>Tổng các số lẻ:</span>
+<!-- Code By Tuancute -->
                     <input type="number" name="odd-number" class="result-input" readonly>
                 </div>
             </div>

@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             case '4':
             case '6':
             case '9':
+<!-- Code By Tuancute -->
             case '11':
                 $result = "Tháng $month năm $year có 31 ngày";
                 break;

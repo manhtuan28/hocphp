@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="box-input">
                 <label for="">Màu nền: </label>
                 <input type="text" name="maunen" value="<?php echo $maunen ?>">
+<!-- Code By Tuancute -->
             </div>
             <div class="box-input">
                 <label for="">Màu chữ: </label>

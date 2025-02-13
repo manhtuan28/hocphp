@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="">Chỉ số cũ:</label>
                 <input type="number" name="chisocu" value="<?php echo $chisocu ?>">
                 <span>(Kw)</span>
+<!-- Code By Tuancute -->
             </div>
             <div class="form-input">
                 <label for="">Chỉ số mới:</label>
