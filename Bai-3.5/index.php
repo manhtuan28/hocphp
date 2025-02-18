@@ -18,6 +18,14 @@ function xuat_mang($mang)
     return $chuoi;
 }
 
+function tinh_tong($mang) {
+    $sum = 0;
+    for($i = 0; $i < count($mang); $i++) {
+        $sum += $mang[$i];
+    }
+    return $sum;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['soPhanTu'])) {
         $n = $_POST['soPhanTu'];
@@ -28,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $max_array = max($mang);
         $min_array = min($mang);
-        $sum_array = array_sum($mang);
+        $sum_array = tinh_tong($mang);
+        // $sum_array = array_sum($mang);
     }
 }
 ?>
