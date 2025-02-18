@@ -23,9 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $n = $_POST['soPhanTu'];
 
         $mang = tao_mang($n);
-        $mangkq = xuat_mang(array_unique($mang)); 
+        $mangkq = xuat_mang(array_unique($mang));
         // array_unique: loại bỏ giá trị trùng lặp trong mảng;
-        
+
         $max_array = max($mang);
         $min_array = min($mang);
         $sum_array = array_sum($mang);
@@ -89,3 +89,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 
 </html>
+
+<!-- Code By Tuancute -->

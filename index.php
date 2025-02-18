@@ -17,6 +17,7 @@ $baiHoc = [
     'Bài 2.14' => './Bai-2.14/index.php',
     'Bài 2.15' => './Bai-2.15/index.php',
     'Bài 2.16' => './Bai-2.16/index.php',
+    'Bài 2.17' => './Bai-2.17/index.php',
     'Bài 2.20' => './Bai-2.20/index.php',
     'Bài 3.1' => './Bai-3.1/index.php',
     'Bài 3.5' => './Bai-3.5/index.php',
