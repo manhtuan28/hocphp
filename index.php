@@ -19,6 +19,7 @@ $baiHoc = [
     'Bài 2.16' => './Bai-2.16/index.php',
     'Bài 2.20' => './Bai-2.20/index.php',
     'Bài 3.1' => './Bai-3.1/index.php',
+    'Bài 3.5' => './Bai-3.5/index.php',
 ];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
