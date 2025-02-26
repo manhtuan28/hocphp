@@ -2,19 +2,21 @@
 error_reporting(0);
 
 // Tạo ngẫu nhiên mảng
-function create_array($n) {
+function create_array($n)
+{
     $str = 0;
 
-    for($i = 0; $i < $n; $i++) {
-        $arr[$i] = rand(0,100);
+    for ($i = 0; $i < $n; $i++) {
+        $arr[$i] = rand(0, 100);
     }
     return $arr;
 }
 
 // Xuất mảng
-function export_array($arr) {
+function export_array($arr)
+{
     $str = "";
-    for($i = 0; $i < count($arr); $i++) {
+    for ($i = 0; $i < count($arr); $i++) {
         $str = $str . $arr[$i] . " ";
     }
 
@@ -22,9 +24,10 @@ function export_array($arr) {
 }
 
 // Tính Tổng mảng
-function sum_array($arr){
+function sum_array($arr)
+{
     $sum = 0;
-    for($i = 0; $i < count($arr); $i++) {
+    for ($i = 0; $i < count($arr); $i++) {
         $sum += $arr[$i];
     }
 
@@ -32,11 +35,12 @@ function sum_array($arr){
 }
 
 // Tính tổng chẵn Mảng
-function sum_array_chan($arr){
+function sum_array_chan($arr)
+{
     $sum_chan = 0;
 
-    for($i = 0; $i < count($arr); $i++) {
-        if($arr[$i] % 2 == 0) {
+    for ($i = 0; $i < count($arr); $i++) {
+        if ($arr[$i] % 2 == 0) {
             $sum_chan += $arr[$i];
         }
     }
@@ -45,12 +49,13 @@ function sum_array_chan($arr){
 }
 
 // Sắp xếp tăng
-function sapXepTang($arr){
+function sapXepTang($arr)
+{
     $c = count($arr);
 
-    for($i = 0; $i < $c - 1; $i++) {
-        for($j = 0; $j < $c - $i - 1; $j++){
-            if($arr[$j] > $arr[$j + 1]) {
+    for ($i = 0; $i < $c - 1; $i++) {
+        for ($j = 0; $j < $c - $i - 1; $j++) {
+            if ($arr[$j] > $arr[$j + 1]) {
                 $tg = $arr[$j];
                 $arr[$j] = $arr[$j + 1];
                 $arr[$j + 1] = $tg;
@@ -63,7 +68,7 @@ function sapXepTang($arr){
 
 if (isset($_POST['soPhanTu'])) {
     $n = $_POST['soPhanTu'];
-    
+
     $arr = create_array($n);
     $result_arr = export_array(array_unique($arr));
 
@@ -71,7 +76,7 @@ if (isset($_POST['soPhanTu'])) {
     $sum_array_chan = sum_array_chan($arr);
 
     $sapXepTang = sapXepTang($arr);
-    $sapXepTangstr = implode(",",$sapXepTang);
+    $sapXepTangstr = implode(",", $sapXepTang);
 }
 
 ?>
@@ -82,6 +87,7 @@ if (isset($_POST['soPhanTu'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Bài 2</title>
 </head>
 
@@ -92,6 +98,8 @@ if (isset($_POST['soPhanTu'])) {
             <div class="box-input">
                 <span>Nhập số phần tử</span>
                 <input type="text" name="soPhanTu" id="" required value="<?php echo $n; ?>">
+            </div>
+            <div class="box-button">
                 <button>Phát sinh và tính toán</button>
             </div>
             <div class="box-input">

@@ -155,16 +155,16 @@ if (isset($_POST['nhapMang1']) && isset($_POST['nhapMang2'])) {
             <div class="box-input"><span>Tích các phần tử lẻ:</span>
                 <input type="text" name="tichPhanTuLe" id="" readonly value="<?php echo $tichCacSoLe; ?>">
             </div>
-            <div class="box-input"><span>Sắp xếp mảng tăng dần</span>
+            <div class="box-input"><span>Sắp xếp mảng tăng dần:</span>
                 <input type="text" name="sapXepTangDan" id="" readonly value="<?php echo $sapXepTangstr; ?>">
             </div>
-            <div class="box-input"><span>Số nguyên tố trong mảng</span>
+            <div class="box-input"><span>Số nguyên tố trong mảng:</span>
                 <input type="text" name="soNguyenTo" id="" readonly value="<?php echo $soNguyenTostr; ?>">
             </div>
             <div class="box-button">
                 <button type="submit">Tính Toán</button>
             </div>
-            <div class="info-warring">
+            <div class="info-warring" style="text-align: center; font-size: 16px;">
                 <span style="font-style: italic;">(Ghi chú: Các phần tử trong mảng cách nhau bới dấu ",")</span>
             </div>
         </div>
