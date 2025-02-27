@@ -33,7 +33,7 @@ function tim_kiem_phan_tu($arr, $giaTri)
 
     for ($i = 0; $i < count($arr); $i++) {
         if ($arr[$i] == $giaTri) {
-            $viTri[] = $i+1;
+            $viTri[] = $i + 1;
         }
     }
 
@@ -56,6 +56,21 @@ function sap_xep_tang_dan($arr)
     return $arr;
 }
 
+function so_chinh_phuong($arr)
+{
+    $cp = [];
+
+    for ($i = 0; $i < count($arr); $i++) {
+        $so = $arr[$i];
+
+        if ($so >= 0 && sqrt($so) == (int)sqrt($so)) {
+            $cp[] = $so;
+        }
+    }
+
+    return $cp;
+}
+
 if (isset($_POST['soPhanTu']) && isset($_POST['giaTriTimKiem'])) {
     $n = $_POST['soPhanTu'];
     $timKiem = $_POST['giaTriTimKiem'];
@@ -69,6 +84,9 @@ if (isset($_POST['soPhanTu']) && isset($_POST['giaTriTimKiem'])) {
     $sapXepTangstr = implode(",", $sapXepTang);
 
     $ketQuaTimKiem = tim_kiem_phan_tu($arr, $timKiem);
+
+    $soChinhPhuong = so_chinh_phuong($arr);
+    $soChinhPhuongstr = implode(",", $soChinhPhuong);
 }
 
 ?>
@@ -116,6 +134,10 @@ if (isset($_POST['soPhanTu']) && isset($_POST['giaTriTimKiem'])) {
                 <div class="box-input">
                     <span>Sắp xếp mảng tăng dần:</span>
                     <input type="text" name="sapXepMangTangDan" id="" readonly value="<?php echo $sapXepTangstr; ?>">
+                </div>
+                <div class="box-input">
+                    <span>Số chính phương:</span>
+                    <input type="text" name="soChinhPhuong" id="" readonly value="<?php echo $soChinhPhuongstr; ?>">
                 </div>
             </div>
         </div>
