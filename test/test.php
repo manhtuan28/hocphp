@@ -1,75 +1,124 @@
 <?php
 error_reporting(0);
 
-// Nhập mảng
-function nhap_mang($str)
+function tao_mang($n)
 {
-    return array_map('trim', explode(",", $str));
+    $arr = [];
+    for ($i = 0; $i < $n; $i++) {
+        $arr[$i] = rand(0, 100);
+    }
+
+    return $arr;
 }
 
-// Gộp mảng
-function gop_mang($str1, $str2)
+function xuat_mang($arr)
 {
-    return implode(",", array_merge(nhap_mang($str1), nhap_mang($str2)));
+    return implode(",", $arr);
 }
 
-// Tổng chẵn
-function tong_chan($str)
+function tong_phan_tu($arr)
 {
-    $arr = nhap_mang($str);
-    $s = 0;
+    $sum = 0;
 
     for ($i = 0; $i < count($arr); $i++) {
-        if ($arr[$i] % 2 == 0) {
-            $s += $arr[$i];
+        $sum += $arr[$i];
+    }
+
+    return $sum;
+}
+
+function tim_kiem_phan_tu($arr, $giaTri)
+{
+    $viTri = [];
+
+    for ($i = 0; $i < count($arr); $i++) {
+        if ($arr[$i] == $giaTri) {
+            $viTri[] = $i+1;
         }
     }
 
-    return $s;
+    return empty($viTri) ? "Không tìm thấy $giaTri trong mảng" : "Giá trị $giaTri nằm tại vị trí: " . implode(",", $viTri);
 }
 
-// Tổng lẻ
-function tong_le($str) {
-    $arr = nhap_mang($str);
-    $s = 0;
+function sap_xep_tang_dan($arr)
+{
+    $n = count($arr);
 
-    for ($i = 0; $i < count($arr); $i++) {
-        if($arr[$i] % 2 != 0) {
-            $s += $arr[$i];
+    for ($i = 0; $i < $n - 1; $i++) {
+        for ($j = 0; $j < $n - $i - 1; $j++) {
+            if ($arr[$j] > $arr[$j + 1]) {
+                $tg = $arr[$j];
+                $arr[$j] = $arr[$j + 1];
+                $arr[$j + 1] = $tg;
+            }
         }
     }
-    
-    return $s;
+    return $arr;
 }
 
-if (isset($_POST['nhapMang1']) && isset($_POST['nhapMang2'])) {
-    $nhapMang1 = $_POST['nhapMang1'];
-    $nhapMang2 = $_POST['nhapMang2'];
+if (isset($_POST['soPhanTu']) && isset($_POST['giaTriTimKiem'])) {
+    $n = $_POST['soPhanTu'];
+    $timKiem = $_POST['giaTriTimKiem'];
 
-    $mangGop = gop_mang($nhapMang1, $nhapMang2);
-    $tongChan = tong_chan($mangGop);
-    $tongLe = tong_le($mangGop);
+    $arr = tao_mang($n);
+    $arr_result = xuat_mang(array_unique($arr));
+
+    $tongPhanTu = tong_phan_tu($arr);
+
+    $sapXepTang = sap_xep_tang_dan($arr);
+    $sapXepTangstr = implode(",", $sapXepTang);
+
+    $ketQuaTimKiem = tim_kiem_phan_tu($arr, $timKiem);
 }
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Tuancute Test</title>
 </head>
 
 <body>
-    <form action="" method="post">
-        <input type="text" name="nhapMang1" id="" required placeholder="Nhập mảng 1" value="<?php echo $nhapMang1; ?>">
-        <input type="text" name="nhapMang2" id="" required placeholder="Nhập mảng 2" value="<?php echo $nhapMang2; ?>">
-        <button type="submit">Tính toán</button>
-        <input type="text" name="gopMang" id="" readonly placeholder="Sau khi gộp" value="<?php echo $mangGop; ?>">
-        <input type="text" name="tongChan" id="" readonly placeholder="Tổng các số chẵn" value="<?php echo $tongChan; ?>">
-        <input type="text" name="tongLe" id="" readonly placeholder="Tổng các số lẻ" value="<?php echo $tongLe; ?>">
+    <form action="" method="POST">
+        <div class="title">
+            Phát sinh mảng và tính toán
+        </div>
+        <div class="form-input">
+            <div class="box-input">
+                <span>Nhập số phần tử:</span>
+                <input type="text" name="soPhanTu" id="" required value="<?php echo $n; ?>">
+            </div>
+            <div class="box-input">
+                <span>Nhập giá trị cần tìm kiếm:</span>
+                <input type="text" name="giaTriTimKiem" id="" value="<?php echo $timKiem; ?>">
+            </div>
+            <div class="box-button box-input">
+                <button type="submit">Phát sinh và tính toán</button>
+            </div>
+            <div class="box-input-group-2">
+                <div class="box-input">
+                    <span>Mảng:</span>
+                    <input type="text" name="mangKetQua" id="" readonly value="<?php echo $arr_result; ?>">
+                </div>
+                <div class="box-input">
+                    <span>Tổng các phần tử:</span>
+                    <input type="text" name="tongCacPhanTu" id="" readonly value="<?php echo $tongPhanTu; ?>">
+                </div>
+                <div class="box-input">
+                    <span>Kết quả tìm kiếm:</span>
+                    <input type="text" name="ketQuaTimKiem" id="" readonly value="<?php echo $ketQuaTimKiem; ?>">
+                </div>
+                <div class="box-input">
+                    <span>Sắp xếp mảng tăng dần:</span>
+                    <input type="text" name="sapXepMangTangDan" id="" readonly value="<?php echo $sapXepTangstr; ?>">
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 
