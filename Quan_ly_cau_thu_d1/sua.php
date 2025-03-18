@@ -5,159 +5,150 @@ if (isset($_GET['ma'])) {
     $ma = $_GET['ma'];
 }
 
-$queryDL = mysqli_query($conn, "SELECT * FROM thongtincauthu WHERE maSo = '$ma'");
-$row = mysqli_fetch_assoc($queryDL);
+?>
+
+<?php
+$queryCheck = mysqli_query($conn, "SELECT * FROM thongtincauthu WHERE maSo = '$ma'");
+$rowCheck = mysqli_fetch_assoc($queryCheck);
 ?>
 
 <?php
 if (isset($_POST['sua'])) {
-    $maSo = $_POST['maSo'];
+    $maCauThu = $_POST['maSo'];
     $hoTen = $_POST['hoTen'];
     $ngaySinh = $_POST['ngaySinh'];
     $viTri = $_POST['viTri'];
     $clb = $_POST['clb'];
 
-    $query = mysqli_query($conn, "UPDATE thongtincauthu SET maSo = '$maSo', hoTen = '$hoTen', ngaySinh = '$ngaySinh', viTri = '$viTri', CLB_ID = '$clb' WHERE maSo = '$ma'");
+    $query = mysqli_query($conn, "UPDATE thongtincauthu SET maSo = '$maCauThu', hoTen = '$hoTen', ngaySinh = '$ngaySinh', viTri = '$viTri', CLB_ID = '$clb' WHERE maSo = '$ma'");
     header("location: index.php");
 }
 ?>
 
-<title>Thêm mới cầu thủ</title>
+<!DOCTYPE html>
+<html lang="vi">
 
-<style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f4f4f4;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sửa Cầu Thủ</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
 
-    .container {
-        width: 950px;
-        height: auto;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-    }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
 
-    h2 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 20px;
-    }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
 
-    table th,
-    table td {
-        padding: 12px;
-        border-bottom: 1px solid #ddd;
-    }
+        input,
+        select {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
 
-    table th {
-        background-color: #f8f9fa;
-        color: #333;
-        font-weight: bold;
-    }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-    input[type="text"],
-    input[type="date"],
-    select {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+        .btn {
+            display: inline-block;
+            padding: 10px 14px;
+            margin: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+            border: none;
+        }
 
-    button {
-        margin-top: 10px;
-        padding: 10px 20px;
-        cursor: pointer;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-    }
+        .btn-sua {
+            background-color: #28a745;
+        }
 
-    .sua-btn {
-        background-color: #28a745;
-    }
+        .btn-sua:hover {
+            background-color: #218838;
+        }
 
-    .sua-btn:hover {
-        background-color: #218838;
-    }
+        .btn-huy {
+            background-color: #dc3545;
+        }
 
-    a {
-        display: inline-block;
-        margin-bottom: 20px;
-        color: #007bff;
-        text-decoration: none;
-        font-size: 16px;
-    }
+        .btn-huy:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
 
-    a:hover {
-        text-decoration: underline;
-    }
-</style>
+<body>
 
-<form action="" method="post">
     <div class="container">
-        <a href="index.php">Quay lại trang chủ</a>
-        <h2 style="text-align: center;">THÊM MỚI CẦU THỦ</h2>
-        <table align="center">
-            <tr>
-                <th>Mã số cầu thủ:</th>
-                <td><input type="text" name="maSo" id="" value="<?php echo $row['maSo']; ?>"></td>
-            </tr>
-            <tr>
-                <th>Họ tên cầu thủ:</th>
-                <td><input type="text" name="hoTen" id="" value="<?php echo $row['hoTen']; ?>"></td>
-            </tr>
-            <tr>
-                <th>Ngày sinh:</th>
-                <td><input type="date" name="ngaySinh" id="" value="<?php echo $row['ngaySinh']; ?>"></td>
-            </tr>
-            <tr>
-                <th>Vị trí:</th>
-                <td><input type="text" name="viTri" id="" value="<?php echo $row['viTri']; ?>"></td>
-            </tr>
-            <tr>
-                <th>Câu lạc bộ:</th>
-                <td>
-                    <select name="clb" id="">
-                        <?php
-                        $queryCLB = mysqli_query($conn, "SELECT * FROM caulacbo");
+        <h2>Sửa Cầu Thủ</h2>
 
-                        if (mysqli_num_rows($queryCLB) > 0) {
-                            while ($rowCLB = mysqli_fetch_assoc($queryCLB)) {
-                                if ($rowCLB['maCLB'] == $row['CLB_ID']) {
-                                    echo "<option value='{$rowCLB['maCLB']}' selected>{$rowCLB['tenCLB']}</option>";
-                                } else {
-                                    echo "<option value='{$rowCLB['maCLB']}'>{$rowCLB['tenCLB']}</option>";
-                                }
-                            }
+        <form action="#" method="POST">
+            <label for="maSo">Mã cầu thủ:</label>
+            <input type="text" id="maSo" name="maSo" required value="<?php echo $rowCheck['maSo']; ?>">
+
+            <label for="hoTen">Họ và Tên:</label>
+            <input type="text" id="hoTen" name="hoTen" required value="<?php echo $rowCheck['hoTen']; ?>">
+
+            <label for="ngaySinh">Ngày Sinh:</label>
+            <input type="date" id="ngaySinh" name="ngaySinh" required value="<?php echo $rowCheck['ngaySinh']; ?>">
+
+            <label for="viTri">Vị trí:</label>
+            <input type="text" id="viTri" name="viTri" required value="<?php echo $rowCheck['viTri']; ?>">
+
+            <label for="clb">Câu Lạc Bộ:</label>
+            <select name="clb" id="clb" require>
+                <?php
+                $queryCLB = mysqli_query($conn, "SELECT * FROM caulacbo");
+                if (mysqli_num_rows($queryCLB) > 0) {
+                    while ($rowCLB = mysqli_fetch_assoc($queryCLB)) {
+                        if ($rowCLB['maCLB'] == $rowCheck['CLB_ID']) {
+                            echo "<option value='{$rowCLB['maCLB']}' selected>{$rowCLB['tenCLB']}</option>";
+                        } else {
+                            echo "<option value='{$rowCLB['maCLB']}'>{$rowCLB['tenCLB']}</option>";
                         }
-                        ?>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th></th>
-                <td>
-                    <button type="submit" name="sua" class="sua-btn">Sửa</button>
-                </td>
-            </tr>
-        </table>
+                    }
+                }
+                ?>
+            </select>
+
+            <div class="btn-container">
+                <button type="submit" class="btn btn-sua" name="sua">➕ Lưu</button>
+                <a href="index.php" class="btn btn-huy">❌ Hủy</a>
+            </div>
+        </form>
     </div>
-</form>
+
+</body>
+
+</html>

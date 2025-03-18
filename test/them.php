@@ -131,7 +131,7 @@ if (isset($_POST['them'])) {
 
             <div class="btn-container">
                 <button type="submit" class="btn btn-them" name="them">➕ Thêm</button>
-                <a href="index.php" class="btn btn-huy" target="_blank">❌ Hủy</a>
+                <a href="index.php" class="btn btn-huy">❌ Hủy</a>
             </div>
         </form>
     </div>

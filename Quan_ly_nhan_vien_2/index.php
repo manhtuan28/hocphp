@@ -80,7 +80,7 @@ require_once "connect.php";
         <?php
         $query = mysqli_query($conn, "SELECT nv.manv, nv.hoten, nv.ngaysinh, nv.gioitinh, nv.hsl, dv.tendv, cv.tencv FROM nhanvien nv
                 JOIN donvi dv ON nv.madv_id = dv.madv
-                JOIN chucvu cv ON nv.macv_id = cv.macv");
+                JOIN chucvu cv ON nv.macv_id = cv.macv ORDER BY nv.manv ASC");
         $stt = 1;
         if (mysqli_num_rows($query) > 0) {
             while ($row = mysqli_fetch_assoc($query)) {

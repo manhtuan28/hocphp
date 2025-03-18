@@ -117,7 +117,7 @@ require_once "connect.php";
         <h2>Quản Lý Cầu Thủ</h2>
 
         <div class="btn-container">
-            <a href="them.php" class="btn btn-them" target="_blank">➕ Thêm Mới</a>
+            <a href="them.php" class="btn btn-them">➕ Thêm Mới</a>
         </div>
 
         <table>
@@ -148,8 +148,8 @@ require_once "connect.php";
                             <td><?php echo $row['viTri']; ?></td>
                             <td><?php echo $row['tenCLB']; ?></td>
                             <td class="action-buttons">
-                                <a href="#" class="btn btn-sua">✏️ Sửa</a>
-                                <a href="#" class="btn btn-xoa">❌ Xóa</a>
+                                <a href="sua.php?ma=<?php echo $row['maSo']; ?>" class="btn btn-sua">✏️ Sửa</a>
+                                <a href="xoa.php?ma=<?php echo $row['maSo']; ?>" class="btn btn-xoa" onclick="return xacNhan()">❌ Xóa</a>
                             </td>
                         </tr>
                 <?php }
@@ -159,7 +159,11 @@ require_once "connect.php";
             </tbody>
         </table>
     </div>
-
+<script>
+    function xacNhan() {
+        return confirm("Bạn có muốn xóa?");
+    }
+</script>
 </body>
 
 </html>
