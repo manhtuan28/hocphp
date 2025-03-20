@@ -1,5 +1,25 @@
 <?php
 require_once "connect.php";
+
+$soNhanVien = 10;
+
+if (isset($_GET['page'])) {
+    $trangBatDau = $_GET['page'];
+
+    if ($trangBatDau < 1) {
+        $trangBatDau = 1;
+    }
+} else {
+    $trangBatDau = 1;
+}
+
+$batDau = ($trangBatDau - 1) * $soNhanVien;
+
+$queryTong = mysqli_query($conn, "SELECT COUNT(*) AS tong FROM nhanvien");
+$rowTong = mysqli_fetch_assoc($queryTong);
+$tongNhanVien = $rowTong['tong'];
+$soTrang = ceil($tongNhanVien / $soNhanVien);
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +43,17 @@ require_once "connect.php";
     td {
         padding: 10px;
         text-align: center;
+    }
+
+    .phanTrang {
+        text-align: center;
+        padding: 5px;
+    }
+
+    .phanTrang a {
+        text-decoration: none;
+        font-size: 22px;
+        padding: 5px;
     }
 </style>
 
@@ -61,7 +92,7 @@ require_once "connect.php";
         } ?>
     </table>
 
-    <table border="1" align="center" cellpadding="12" cellspacing ="0">
+    <table border="1" align="center" cellpadding="12" cellspacing="0">
         <tr>
             <th colspan="8">DANH SÁCH NHÂN VIÊN</th>
             <th><a href="them.php">Thêm nhân viên</a></th>
@@ -80,8 +111,8 @@ require_once "connect.php";
         <?php
         $query = mysqli_query($conn, "SELECT nv.manv, nv.hoten, nv.ngaysinh, nv.gioitinh, nv.hsl, dv.tendv, cv.tencv FROM nhanvien nv
                 JOIN donvi dv ON nv.madv_id = dv.madv
-                JOIN chucvu cv ON nv.macv_id = cv.macv ORDER BY nv.manv ASC");
-        $stt = 1;
+                JOIN chucvu cv ON nv.macv_id = cv.macv ORDER BY nv.manv ASC LIMIT $soNhanVien OFFSET $batDau");
+        $stt = $batDau + 1;
         if (mysqli_num_rows($query) > 0) {
             while ($row = mysqli_fetch_assoc($query)) {
         ?>
@@ -101,7 +132,15 @@ require_once "connect.php";
             echo "<tr><td colspan='8'>Không có dữ kiệu!</td></tr>";
         } ?>
     </table>
-
+    <div class="phanTrang">
+        <?php
+        for ($i = 1; $i <= $soTrang; $i++) {
+        ?>
+            <a href="?page=<?php echo $i; ?>">
+                <?php echo $i; ?>
+            </a>
+        <?php } ?>
+    </div>
     <script>
         function xacNhan() {
             return confirm("Bạn có chắc chắn muốn xóa?");

@@ -1,5 +1,25 @@
 <?php
 require_once "connect.php";
+
+$limit = 5;
+
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+
+    if ($page < 1) {
+        $page = 1;
+    }
+} else {
+    $page = 1;
+}
+
+$start = ($page - 1) * $limit;
+
+$querySum = mysqli_query($conn, "SELECT COUNT(*) AS sum FROM thongtincauthu");
+$rowSum = mysqli_fetch_assoc($querySum);
+$SumCT = $rowSum['sum'];
+$SumPage = ceil($SumCT  / $limit);
+
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +38,7 @@ require_once "connect.php";
         }
 
         .container {
-            max-width: 900px;
+            max-width: 990px;
             margin: auto;
             background: #fff;
             padding: 20px;
@@ -108,6 +128,17 @@ require_once "connect.php";
         .action-buttons {
             text-align: center;
         }
+
+        .phanTrang {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .phanTrang a {
+            text-decoration: none;
+            font-size: 22px;
+            padding: 10px;
+        }
     </style>
 </head>
 
@@ -134,9 +165,9 @@ require_once "connect.php";
             </thead>
             <tbody>
                 <?php
-                $stt = 1;
                 $query = mysqli_query($conn, "SELECT ttct.maSo, ttct.hoTen, ttct.ngaySinh, ttct.viTri, clb.tenCLB FROM thongtincauthu ttct
-                    JOIN caulacbo clb ON ttct.CLB_ID = clb.maCLB ORDER BY ttct.maSo ASC");
+                    JOIN caulacbo clb ON ttct.CLB_ID = clb.maCLB ORDER BY ttct.maSo ASC LIMIT $limit OFFSET $start");
+                $stt = $start;
                 if (mysqli_num_rows($query) > 0) {
                     while ($row = mysqli_fetch_assoc($query)) {
                 ?>
@@ -158,12 +189,20 @@ require_once "connect.php";
                 } ?>
             </tbody>
         </table>
-    </div>
-<script>
-    function xacNhan() {
-        return confirm("Bạn có muốn xóa?");
-    }
-</script>
+        <div class="phanTrang">
+            <?php
+            for ($i = 1; $i <= $SumPage; $i++) {
+            ?>
+                <a href="?page=<?php echo $i; ?>">
+                    <?php echo $i; ?>
+                </a>
+            <?php } ?>
+        </div>
+        <script>
+            function xacNhan() {
+                return confirm("Bạn có muốn xóa?");
+            }
+        </script>
 </body>
 
 </html>
